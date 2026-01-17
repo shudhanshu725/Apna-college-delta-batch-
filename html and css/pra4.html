@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 10px;
+        }
+        header {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            background-color: rgb(240, 147, 181);
+            
+        }   
+        sidebar {
+            grid-column: 1 / span 3;
+            grid-row: 2 / span 10;
+            background-color: rgb(235, 147, 147);
+        }
+        nav {
+            grid-column: 4 / span 6;
+            grid-row: 2;
+            background-color: rgb(244, 166, 166);
+        }
+        main {
+            grid-column: 4 / span 6;
+            grid-row: 3 / span 9;
+            background-color: rgb(236, 163, 163);
+        }
+        ads {
+            grid-column: -1 / 10 ;
+            grid-row: 2 / span 10;
+            background-color: lightpink;
+        }
+        footer{
+            grid-column: 1 / -1;
+            grid-row: 0;
+            background-color: rgb(240, 147, 181);
+
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>header(1 row,12 columns)</header>
+        <sidebar>sidebar(10 row,3 columns)</sidebar>
+        <nav>nav(1 row,6 columns)</nav>
+        <main>main(9 row ,6 columns)</main>
+        <ads>ads(10 row,3 columns)</ads>
+        <footer>footer(1 row,12 columns)</footer>
+
+    </div>
+</body>
+</html>

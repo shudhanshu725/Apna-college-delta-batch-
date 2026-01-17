@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing game</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px #fff;
+        }
+        #guessInput {
+            padding: 10px;
+            font-size: 1.1em;
+            border: 2px solid #fda085;
+            border-radius: 5px;
+            outline: none;
+            margin-right: 10px;
+            transition: border 0.3s;
+        }
+        #guessInput:focus {
+            border: 2px solid #f6d365;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background: #fda085;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #f6d365;
+            color: #333;
+        }
+        #result {
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            min-height: 30px;
+        }
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            #guessInput, button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess a number between 1 and 100</h1>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Submit Guess</button>
+    <p id="result"></p>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById('guessInput').value);
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                document.getElementById('result').innerText = `Congratulations! You've guessed the number ${randomNumber} in ${attempts} attempts.`;
+            } else if (userGuess < randomNumber) {
+                document.getElementById('result').innerText = 'Too low! Try again.';
+            } else {
+                document.getElementById('result').innerText = 'Too high! Try again.';
+            }
+        }
+    </script>
+</body>
+</html>

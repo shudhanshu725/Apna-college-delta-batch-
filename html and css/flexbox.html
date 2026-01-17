@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        .container{
+            width: 80%;
+            height: 400px;
+            background-color: red;
+           margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start; 
+            flex-wrap: nowrap;
+            align-items: flex-start; 
+        }
+        .container div{
+            height: 150px;
+            width: 120px;
+            background-color: blue;
+            text-align: center; 
+            border: 1px solid black;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1" style="background-color: azure; height: 100px;">1</div>
+        <div class="box2" style="background-color: aquamarine; height: 200px;">3</div>
+        <div class="box3" style="background-color: lightblue; height: 300px; font-size: large;">hello world
+        </div>
+        <div class="box4" style="background-color: lightcoral; height: 400px;">4</div>
+        <div class="box5" style="background-color: lightgreen; height: 500px;">5</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+        
+        
+    </div>
+</body>
+</html>

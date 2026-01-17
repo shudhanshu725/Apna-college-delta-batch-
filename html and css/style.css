@@ -1,0 +1,37 @@
+#div1{
+    margin: 0px;
+    padding: 20px;
+    background-color: lightblue;
+    border-radius: 1px;
+    border: 2px  black ;
+    border-style:  dashed;
+    height: 100%;
+    border-radius: 80px;
+    margin-bottom: 20px;
+}
+#div2{
+    padding: 20px;
+    border: 2px black;
+    border-style:dashed;
+    background-color: palegreen;
+    border-radius: 80px;
+    outline-style: groove;
+    outline-color: red;
+    outline-width: 5px; 
+
+}
+span{
+    background-color: brown;
+    border: 2px solid black;
+    height: 100px;
+    padding: 20px;
+}
+.r4{
+    width: 400px;
+    height: 200px;
+    background-color: aquamarine;
+    margin: 40px auto;
+    background-image: url("harsh.png");
+    background-size: cover;
+    background-position: center;
+}

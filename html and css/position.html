@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        .face{
+            height: 180px;
+            width: 180px;
+            background-color: rgb(255, 145, 0);
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .eyes{
+            display: flex;
+
+        }
+        .eye1,.eye2{
+            height: 20px;
+            width: 20px;
+            margin: 35px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .mouth{
+            height: 20px;
+            width: 60px;
+            background-color: rgb(205, 30, 30);
+            position: absolute;
+            margin-left: 60px;
+            margin-top: 30px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+      <div class="face"> 
+        <div class="eyes">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+        </div>
+        <div class="mouth"></div>
+      </div>  
+    </div>
+</body>
+</html>
