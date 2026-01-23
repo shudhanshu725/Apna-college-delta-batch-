@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q1 Events</title>
+  <style>
+    body {
+      height: 1500px;
+    }
+    #box {
+      width: 200px;
+      height: 100px;
+      background: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="box">
+    Mouse here
+  </h2>
+
+  <input type="text" id="keyInput" placeholder="Press any key">
+
+  <h1 id="heading">Your Name:</h1>
+  <input type="text" id="nameInput" placeholder="Type your name">
+
+  <script>
+
+// //Question 1: Add event listeners for the following events and log appropriate messages to the console:    
+    // mouseout
+    document.getElementById("box").addEventListener("mouseout", () => {
+      console.log("Mouse left the box");  //if mouse leaves the box, log message
+    });
+
+    // keydown (replaces deprecated keypress)
+    document.getElementById("keyInput").addEventListener("keydown", (e) => {
+      console.log("Key pressed:", e.key); //log the key that was pressed
+    });
+
+    // scroll
+    window.addEventListener("scroll", () => {
+      console.log("Page scrolling..."); //log message when page is scrolled
+    });
+
+    // load
+    window.addEventListener("load", () => {
+      console.log("Page fully loaded"); //log message when page is fully loaded
+    });
+//Question 2: Create a button that changes its color when clicked.
+    // create button
+  const btn = document.createElement("button");
+  btn.innerText = "Click Me";
+
+  // add event
+  btn.addEventListener("click", () => {
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+  });
+
+  // add to page
+  document.body.appendChild(btn);
+
+//Question 3: Create an input field that only accepts alphabetic characters and displays the entered name in a heading below it.
+  const input = document.getElementById("nameInput");
+    const heading = document.getElementById("heading");
+
+    input.addEventListener("input", () => {
+      // remove invalid characters
+      let filteredValue = input.value.replace(/[^a-zA-Z ]/g, "");
+
+      // set filtered value back to input
+      input.value = filteredValue;
+
+      // show in heading
+      heading.innerText = filteredValue;
+    });
+  </script>
+
+</body>
+</html>
