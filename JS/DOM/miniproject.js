@@ -52,6 +52,22 @@ btn.addEventListener('click',function(){
     item.innerText = inp.value;
     ul.appendChild(item);
     inp.value="";
+
+
+let delBtn = document.createElement("button");
+delBtn.innerText = "Delete";
+delBtn.classList.add("delete");
+
+item.appendChild(delBtn);
+ul.appendChild(item);
+inp.value="";
+});
+
+
+
+ul.addEventListener('click',function(event){
+    console.log(event.target); 
+    console.log("ul clicked");
 });
 
 
