@@ -37,20 +37,87 @@
 // console.log("End of script"); // <- this line is executed first because setTimeout is asynchronous and non-blocking 
 
 //Callback hell example
-h1 = document.querySelector("h1")
-function changeColor(color, delay, callback){
-    setTimeout(function(){
-        h1.style.color = color;
-        if(callback){
-            callback();
-        }
-    }, delay);
-}
+// h1 = document.querySelector("h1")
+// function changeColor(color, delay){
+//     return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         h1.style.color = color;
+//             resolve("Color changed to ");
+//         }, delay);
+//     });
+// }
+// changeColor("red", 1000)
+// .then(() => changeColor("orange", 1000))
+// .then(() => changeColor("yellow", 1000))
 //Callback hell means nested callbacks making code hard to read and maintain
-changeColor("red", 1000, function(){
-    changeColor("orange", 1000, function(){
-        changeColor("yellow", 1000, function(){
-            console.log("All colors changed!");
-        });
-    });
+// changeColor("red", 1000, function(){
+//     changeColor("orange", 1000, function(){
+//         changeColor("yellow", 1000, function(){
+//             console.log("All colors changed!");
+//         });
+//     });
+// });
+
+//PROMISES to avoid callback hell
+// function saveToDatabase(data){
+//     return new Promise(function(resolve, reject){
+//     let internetspeed = Math.floor(Math.random() * 10) + 1; //simulate internet speed 
+    
+//         if(internetspeed > 4){
+//             resolve("Succes:Data saved successfully!");
+//         } else {
+//             reject("failure:Error saving data.");
+//         }
+//     });
+//     }
+// //then and catch methods to handle promise result
+//     saveToDatabase("myData")
+//     .then((successMessage)=>{
+//         console.log(successMessage);  
+//         console.log(successMessage)
+//         return saveToDatabase("moreData")
+//         .then((successMessage)=>{
+//             console.log(successMessage);
+//         })
+//         .then((successMessage)=>{
+//             console.log("success:All data saved successfully!");
+//         })
+//         .catch((moreErrorMessage)=>{
+//             console.log(moreErrorMessage);
+//         });
+//     })
+//     .catch((errorMessage)=>{
+//         console.log(errorMessage);
+//     });
+
+// async syntax to handle promises
+async function greet(){
+    throw "something went wrong!";  
+    return "Hello!";
+}
+greet()
+.then((message)=>{
+    console.log(message);
+})
+.catch((error)=>{
+    console.log("Error caught: " + error);
 });
+
+// Await syntax to handle promises
+function getNum() {
+    return new Promise((resolve, reject)=> {
+        setTimeout(() => {
+        let num= Math.floor(Math.random() * 10) + 1;
+        console.log(num);
+        resolve();
+    },1000);
+});
+}
+
+async function demo(){
+    await getNum();
+    await getNum();
+    await getNum();
+    await getNum();
+    await getNum();
+}
