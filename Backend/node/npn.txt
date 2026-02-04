@@ -1,0 +1,8 @@
+What is NPN ?
+NPM (Node Package Manager) is a tool used to install, manage, and share packages (libraries) in Node.js projects.
+NPM automatically installs with Node.js
+World ka sabse bada package registry
+
+why we need ?
+Without npm: Sab code khud likhna padta
+With npm: Ready-made libraries use kar sakte ho (Express, Mongoose, etc.)

@@ -17,4 +17,7 @@ console.log(process.platform);
 // process.uptime() returns the number of seconds the current Node.js process has been running.
 console.log(process.uptime());
 
+console.log(process.env); // returns an object containing the user environment variables. Each key in the object is the name of an environment variable, and the corresponding value is the value of that variable.
+
+console.log(process.exit());
 
