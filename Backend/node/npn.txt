@@ -6,3 +6,13 @@ World ka sabse bada package registry
 why we need ?
 Without npm: Sab code khud likhna padta
 With npm: Ready-made libraries use kar sakte ho (Express, Mongoose, etc.)
+
+BASIC NPM COMMAND:
+| Command                 | Use                                |
+| ----------------------- | ---------------------------------- |
+| `npm init`              | Project start, package.json banata |
+| `npm init -y`           | Default package.json               |
+| `npm install package`   | Package install                    |
+| `npm uninstall package` | Package remove                     |
+| `npm start`             | Project start script               |
+| `npm run dev`           | Custom script run                  |
